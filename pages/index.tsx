@@ -18,12 +18,12 @@ const Home = () => {
 	const [visiblePosts, setVisiblePosts] = useState(8);
 
 	if (error) return <div>Error fetching data</div>;
-	if (!posts) return 			<div className="items-center mt-40">
-	<div className="h-36 mx-auto rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-3 w-[143.5px] animate-spin">
-		<div className="h-full w-full rounded-full items-center justify-center bg-black back">
+	if (!posts) return <div className="items-center mt-40">
+		<div className="h-36 mx-auto rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-3 w-[143.5px] animate-spin">
+			<div className="h-full w-full rounded-full items-center justify-center bg-black back">
+			</div>
 		</div>
 	</div>
-</div>
 
 	const loadMore = () => {
 		setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 8);
@@ -32,10 +32,20 @@ const Home = () => {
 	// function dynamicImg(link: any) {
 	// 	link += Math.floor(Math.random() * 500) + 200;
 	// 	console.log(link);
-
 	// 	return link
 	// }
 
+	// function makeid(length:any) {
+	// 	let result = '';
+	// 	const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	// 	const charactersLength = characters.length;
+	// 	let counter = 0;
+	// 	while (counter < length) {
+	// 		result += characters.charAt(Math.floor(Math.random() * charactersLength));
+	// 		counter += 1;
+	// 	}
+	// 	return result;
+	// }
 
 	return (
 		<div className='bg-white text-black relative'>
@@ -44,10 +54,10 @@ const Home = () => {
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-16 md:px-32 max-w-lg md:max-w-none mx-auto">
 				{posts.slice(0, visiblePosts).map(post => (
-					<a href={'https://i.pravatar.cc/350?u=' + post.id} target='_blank' key={post.id} className="card-item shadow-lg rounded-2xl hover:shadow-xl transition duration-200 overflow-hidden z-40">
+					<a href={`https://i.pravatar.cc/150?img=` + post.id} target='_blank' key={post.id} className="card-item shadow-lg rounded-2xl hover:shadow-xl transition duration-200 overflow-hidden z-40">
 						{/* <img src={dynamicImg('https://i.pravatar.cc/')} className='w-full' alt="" /> */}
 						{/* <img src={'https://i.pravatar.cc/' + Math.floor(Math.random() * 500) + 300} className='w-full' alt="" /> */}
-						<img src={'https://i.pravatar.cc/350?u=' + post.id} className='w-full' alt="" />
+						<img src={`https://i.pravatar.cc/450?img=` + post.id} className='w-full' alt="" />
 
 						<div className="p-5">
 							<h1 className="font-[600] text-[20px] mb-3">
