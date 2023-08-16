@@ -18,7 +18,7 @@ const Home = () => {
 	const [visiblePosts, setVisiblePosts] = useState(8);
 
 	if (error) return <div>Error fetching data</div>;
-	if (!posts) return <div>Loading...</div>;
+	if (!posts) return <div className="mx-auto w-20 h-20 mt-56 bg-gradient-to-r from-indigo-500 to-blue-300 rounded-full animate-spin"></div>
 
 	const loadMore = () => {
 		setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 8);
