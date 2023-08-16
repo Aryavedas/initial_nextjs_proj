@@ -18,7 +18,12 @@ const Home = () => {
 	const [visiblePosts, setVisiblePosts] = useState(8);
 
 	if (error) return <div>Error fetching data</div>;
-	if (!posts) return <div className="mx-auto w-20 h-20 mt-56 bg-gradient-to-r from-indigo-500 to-blue-300 rounded-full animate-spin"></div>
+	if (!posts) return 			<div className="items-center mt-40">
+	<div className="h-36 mx-auto rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-3 w-[143.5px] animate-spin">
+		<div className="h-full w-full rounded-full items-center justify-center bg-black back">
+		</div>
+	</div>
+</div>
 
 	const loadMore = () => {
 		setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 8);
@@ -35,6 +40,7 @@ const Home = () => {
 	return (
 		<div className='bg-white text-black relative'>
 			<h1 className='text-center text-4xl font-extrabold py-20'>Photos</h1>
+			{/* <div className="mx-auto w-20 h-20 mt-56 bg-gradient-to-r from-indigo-500 to-blue-300 rounded-full animate-spin"></div> */}
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-16 md:px-32 max-w-lg md:max-w-none mx-auto">
 				{posts.slice(0, visiblePosts).map(post => (
